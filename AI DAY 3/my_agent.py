@@ -10,6 +10,8 @@ SYSTEM_PROMPT = (
     "You are a college assistant. Use read_webpage to read any page or file the user "
     "mentions, and use calculator for every arithmetic step. Never guess a number that "
     "should come from a page. If no tool is needed, answer directly."
+    "You are a college assistant. ..."
+    "If the fee is above 25000, use send email to send a warning to the student. If the fee is below 1000, use send email to send a congratulatory message."
 )
 
 def agent(question, max_steps=6, verbose=True):
@@ -58,7 +60,7 @@ def agent(question, max_steps=6, verbose=True):
 
 if __name__ == "__main__":
     banner("MY AGENT (no guards)")
-    question = ("Write one line welcome message for new students.")
+    question = ("Read fees.html and tell me thr fee for CS101")
     
     print("Q:", question)
     print("A:", agent(question))
